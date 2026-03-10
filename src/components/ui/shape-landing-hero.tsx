@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Circle } from "lucide-react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 function ElegantShape({
@@ -79,8 +80,21 @@ function HeroGeometric({
   badge: string;
   badgeHref: string;
   title1: string;
-  title2: string;
+  title2: string | string[];
 }) {
+  const title2Items = Array.isArray(title2) ? title2 : [title2];
+  const [title2Index, setTitle2Index] = useState(0);
+
+  useEffect(() => {
+    if (title2Items.length <= 1) return;
+
+    const intervalId = window.setInterval(() => {
+      setTitle2Index((prevIndex) => (prevIndex + 1) % title2Items.length);
+    }, 3000);
+
+    return () => window.clearInterval(intervalId);
+  }, [title2Items.length]);
+
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
@@ -177,10 +191,26 @@ function HeroGeometric({
               </span>
               <span
                 className={cn(
-                  "block text-4xl sm:text-6xl md:text-8xl bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
+                  "block text-4xl sm:text-6xl md:text-8xl"
                 )}
               >
-                {title2}
+                <span className="relative inline-flex h-[1.1em] overflow-hidden align-top">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${title2Items[title2Index]}-${title2Index}`}
+                      initial={{ y: "100%", opacity: 0 }}
+                      animate={{ y: "0%", opacity: 1 }}
+                      exit={{ y: "-100%", opacity: 0 }}
+                      transition={{
+                        duration: 1.0,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                      className="block bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300"
+                    >
+                      {title2Items[title2Index]}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>
               </span>
             </h1>
           </motion.div>
