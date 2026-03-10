@@ -186,7 +186,7 @@ function HeroGeometric({
             animate="visible"
           >
             <h1 className="font-bold mb-6 md:mb-8 tracking-tight">
-              <span className="block text-5xl sm:text-7xl md:text-9xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+              <span className="block text-4xl sm:text-6xl md:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                 {title1}
               </span>
               <span
@@ -222,8 +222,7 @@ function HeroGeometric({
             animate="visible"
           >
             <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-              Crafting exceptional digital experiences through innovative design and
-              cutting-edge technology.
+              From idea to competition, we design, build and compete with robots we create from scratch. 
             </p>
           </motion.div>
         </div>
