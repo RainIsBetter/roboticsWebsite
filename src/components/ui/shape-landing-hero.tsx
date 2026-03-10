@@ -72,10 +72,12 @@ function ElegantShape({
 
 function HeroGeometric({
   badge,
+  badgeHref,
   title1,
   title2,
 }: {
   badge: string;
+  badgeHref: string;
   title1: string;
   title2: string;
 }) {
@@ -153,7 +155,14 @@ function HeroGeometric({
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
           >
             <Circle className="h-2 w-2 fill-rose-500/80" />
-            <span className="text-sm text-white/60 tracking-wide">{badge}</span>
+            <a
+              href={badgeHref}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-white/70 tracking-wide rounded-full px-2 py-0.5 hover:bg-white/10 hover:text-white transition-colors"
+            >
+              {badge}
+            </a>
           </motion.div>
 
           <motion.div
