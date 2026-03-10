@@ -162,14 +162,13 @@ function HeroGeometric({
             initial="hidden"
             animate="visible"
           >
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+            <h1 className="font-bold mb-6 md:mb-8 tracking-tight">
+              <span className="block text-5xl sm:text-7xl md:text-9xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                 {title1}
               </span>
-              <br />
               <span
                 className={cn(
-                  "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
+                  "block text-4xl sm:text-6xl md:text-8xl bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
                 )}
               >
                 {title2}

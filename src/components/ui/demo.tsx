@@ -4,7 +4,7 @@ function DemoHeroGeometric() {
   return (
     <HeroGeometric
       badge="Kokonut UI"
-      title1="Elevate Your"
+      title1="UPA Robotics"
       title2="Digital Vision"
     />
   );
