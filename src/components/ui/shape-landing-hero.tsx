@@ -71,13 +71,13 @@ function ElegantShape({
 }
 
 function HeroGeometric({
-  badge = "Design Collective",
-  title1 = "Elevate Your Digital Vision",
-  title2 = "Crafting Exceptional Websites",
+  badge,
+  title1,
+  title2,
 }: {
-  badge?: string;
-  title1?: string;
-  title2?: string;
+  badge: string;
+  title1: string;
+  title2: string;
 }) {
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
